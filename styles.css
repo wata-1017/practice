@@ -1,0 +1,159 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* 背景色を白に設定 */
+}
+
+.invitation-envelope {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.envelope {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    animation: fadeIn 2s ease forwards; /* 手紙が浮かび上がるアニメーション */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.letter-mark {
+    width: 50px;
+    height: 50px;
+    background-color: #333; /* 手紙のマークの背景色 */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: zoomIn 2s ease forwards; /* 手紙のマークが拡大するアニメーション */
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.envelope-top,
+.envelope-body {
+    position: absolute;
+    width: 100%;
+}
+
+.envelope-top {
+    top: 0;
+    height: 20px;
+    background-color: #f1f1f1;
+    animation: slideInTop 1s ease forwards; /* 手紙の封を開けるアニメーション */
+}
+
+@keyframes slideInTop {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 20px;
+    }
+}
+
+.envelope-body {
+    top: 20px;
+    background-color: #f1f1f1;
+    animation: slideInBody 1s ease forwards; /* 手紙の本体が現れるアニメーション */
+}
+
+@keyframes slideInBody {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: auto;
+    }
+}
+
+.photos img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: photoAppear 1.5s ease forwards; /* 写真が浮かび上がるアニメーション */
+}
+
+@keyframes photoAppear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.invitation {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    animation: slideInInvitation 1s ease forwards; /* 招待状が浮かび上がるアニメーション */
+}
+
+@keyframes slideInInvitation {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.invitation-content {
+    padding: 20px;
+}
+
+.invitation-content h2 {
+    margin-top: 0;
+}
+
+.part1 {
+    margin-bottom: 20px;
+}
+
+.part2 {
+    display: none; /* 入力パートは初期状態で非表示 */
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+    color: #fff;
+}
